@@ -17,7 +17,7 @@
             font-size: 20px;
         }
         main{
-            float: right;
+            float: left;
             border: 1px solid gray;
             padding: 5px;
         }
@@ -31,7 +31,7 @@
         aside{
             text-align:center;
             width:300px;
-            float:left;
+            float:right;
             border: 1px solid black;
             padding:10px;
             font-size:20px;
@@ -54,6 +54,7 @@
             margin-top: 7px;
             font-size: 17px;
             font-family: 'Tajawal', sans-serif;
+            font-weight:bold
             
 
 
@@ -67,8 +68,28 @@
 
 
 </head>
-<body>
-    
+<body dir="rtl">
+   <?php 
+   $host = 'localhost';
+   $user='root'; 
+   $pass='root'; 
+   $db='student1';
+   $con= mysqli_connect('localhost','root','root','student1');
+
+
+   $res= mysqli_query($con,"select * from student");
+   $id=''; 
+   $name=''; 
+   $address='';
+if(isset($_POST['id'])){
+    $id= $_POST['id'];
+
+}
+
+
+
+   #
+   ?> 
 <div id="mother">
     <form action="" method="POST">
         <!-- لوحة التعلم -->
