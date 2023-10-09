@@ -81,12 +81,42 @@
    $id=''; 
    $name=''; 
    $address='';
-if(isset($_POST['id'])){
+
+if(isset($_POST ['id'])){
     $id= $_POST['id'];
 
 }
 
+if(isset($_POST ['name'])){
+    $name= $_POST['name'];
+}
 
+if(isset($_POST ['adress'])){
+    $address= $_POST['address'];
+}
+
+$sqls = '';
+
+if(isset($_POST ['add'])){
+    $sqls = "INSERT INTO student VALUES($id,'$name','$address')";
+    mysqli_query($con,$sqls);
+    header("Location: home.php");
+
+}
+
+if(isset($_POST ['del'])){
+    $sqls = "DELETE FROM student WHERE name ='$name'";
+    mysqli_query($con,$sqls);
+    header("Location: home.php");
+
+    
+   
+}
+
+if(isset($_POST [''])){
+    
+
+}
 
    #
    ?> 
@@ -117,12 +147,10 @@ if(isset($_POST['id'])){
                     <th> الرقم التسلسلي</th>
                     <th> اسم الطالب </th>
                     <th> عنوان الطالب </th>
-
-
-
-
                 </tr>
-
+<?php while($row =mysqli_fetch_array($res)){
+    echo "<tr"
+}    ?>
             </table>
         </main>
 
