@@ -41,7 +41,13 @@
         #tbl{
             width:890px;
             font-size:20px;
+            text-align: center;
         }
+        #tbl:hover{
+            color: red ;
+            background: white ;
+        }
+
         #tbl th{
             background-color: silver;
             color: #000;
@@ -54,7 +60,7 @@
             margin-top: 7px;
             font-size: 17px;
             font-family: 'Tajawal', sans-serif;
-            font-weight:bold
+            font-weight:bold;
             
 
 
@@ -91,7 +97,7 @@ if(isset($_POST ['name'])){
     $name= $_POST['name'];
 }
 
-if(isset($_POST ['adress'])){
+if(isset($_POST ['address'])){
     $address= $_POST['address'];
 }
 
@@ -149,8 +155,15 @@ if(isset($_POST [''])){
                     <th> عنوان الطالب </th>
                 </tr>
 <?php while($row =mysqli_fetch_array($res)){
-    echo "<tr"
-}    ?>
+    echo "<tr>";
+    echo "<td>".$row['id']."</td>";
+    echo "<td>".$row['name']."</td>";
+    echo "<td>".$row['address']."</td>";
+    echo "</tr>";
+
+
+} 
+   ?>
             </table>
         </main>
 
